@@ -51,7 +51,7 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --card: oklch(0.907 0.0001 271.151);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -126,5 +126,40 @@
   }
   html {
     @apply font-sans;
+  }
+  /* Tailwind v4 Typography Reset Overrides */
+  h1 {
+    scroll-margin: 5rem; /* scroll-m-20 */
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: var(--tracking-tight);
+
+    @media (min-width: 1024px) {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  h2 {
+    scroll-margin: 5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h3 {
+    scroll-margin: 5rem;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  p {
+    line-height: 1.75rem; /* leading-7 */
+
+    &:not(:first-child) {
+      margin-top: 1.5rem; /* mt-6 */
+    }
   }
 }
