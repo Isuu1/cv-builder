@@ -1,19 +1,25 @@
 "use client";
 
-import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field";
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useCvStore } from "@/store/useCvStore";
-import React from "react";
 
 const PersonalDetailsForm = () => {
-  const fullName = useCvStore((state) => state.data.personalInfo.fullName);
-  const email = useCvStore((state) => state.data.personalInfo.email);
-  const title = useCvStore((state) => state.data.personalInfo.title);
+  const { fullName, email, title } = useCvStore(
+    (state) => state.data.personalInfo,
+  );
 
   const updatePersonalInfo = useCvStore((state) => state.updatePersonalInfo);
 
   return (
     <FieldSet>
+      <FieldLegend>Personal Details</FieldLegend>
       <FieldGroup className="grid grid-cols-2 gap-4">
         <Field>
           <FieldLabel>Name</FieldLabel>
