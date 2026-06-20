@@ -3,11 +3,11 @@ import PreviewPanel from "./_components/PreviewPanel";
 
 export default function Page() {
   return (
-    <div className="w-full h-full grid-cols-2 grid gap-4 p-10">
-      <section className="flex flex-col gap-4 bg-card rounded-2xl p-4">
+    <div className="w-full grid-cols-2 grid gap-4 p-10 h-screen overflow-hidden">
+      <section>
         <PersonalDetailsForm />
       </section>
-      <section className="flex flex-col gap-4 bg-card rounded-2xl p-4">
+      <section className="bg-card rounded-2xl overflow-y-auto">
         <PreviewPanel />
       </section>
     </div>

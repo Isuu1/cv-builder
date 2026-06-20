@@ -18,38 +18,40 @@ const PersonalDetailsForm = () => {
   const updatePersonalInfo = useCvStore((state) => state.updatePersonalInfo);
 
   return (
-    <FieldSet>
-      <FieldLegend>Personal Details</FieldLegend>
-      <FieldGroup className="grid grid-cols-2 gap-4">
+    <div className="bg-card rounded-2xl p-4">
+      <FieldSet>
+        <FieldLegend>Personal Details</FieldLegend>
+        <FieldGroup className="grid grid-cols-2 gap-4">
+          <Field>
+            <FieldLabel>Name</FieldLabel>
+            <Input
+              type="text"
+              placeholder="Enter your name"
+              value={fullName}
+              onChange={(e) => updatePersonalInfo("fullName", e.target.value)}
+            />
+          </Field>
+          <Field>
+            <FieldLabel>Email</FieldLabel>
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => updatePersonalInfo("email", e.target.value)}
+            />
+          </Field>
+        </FieldGroup>
         <Field>
-          <FieldLabel>Name</FieldLabel>
+          <FieldLabel>Title</FieldLabel>
           <Input
             type="text"
-            placeholder="Enter your name"
-            value={fullName}
-            onChange={(e) => updatePersonalInfo("fullName", e.target.value)}
+            placeholder="Enter your title"
+            value={title}
+            onChange={(e) => updatePersonalInfo("title", e.target.value)}
           />
         </Field>
-        <Field>
-          <FieldLabel>Email</FieldLabel>
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => updatePersonalInfo("email", e.target.value)}
-          />
-        </Field>
-      </FieldGroup>
-      <Field>
-        <FieldLabel>Title</FieldLabel>
-        <Input
-          type="text"
-          placeholder="Enter your title"
-          value={title}
-          onChange={(e) => updatePersonalInfo("title", e.target.value)}
-        />
-      </Field>
-    </FieldSet>
+      </FieldSet>
+    </div>
   );
 };
 
